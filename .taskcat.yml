@@ -1,5 +1,5 @@
 project:
-  name: quickstart-amazon-selling-partner-api
+  name: cfn-ps-amazon-selling-partner-api
   owner: aws-ia-eng@amazon.com
   lambda_source_path: functions/source
   lambda_zip_path: functions/packages
