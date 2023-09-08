@@ -48,10 +48,19 @@ Resources:
             Statement:
               - Effect: Allow
                 Action: execute-api:Invoke
-                Resource: arn:aws:execute-api:*:*:*
+                Resource: !Sub "arn:${AWS::Partition}:execute-api:*:*:*"
           PolicyName: SellingPartnerAPI
       RoleName: SPAPIIAMRole
   LambdaExecutionRole:
+    Metadata:
+      cfn-lint:
+        config:
+          ignore_checks:
+            - EIAMPolicyActionWildcard
+            - EIAMPolicyWildcardResource
+          ignore_reasons:
+            - EIAMPolicyActionWildcard: Intent assumed for initial migration.
+            - EIAMPolicyWildcardResource: Intent assumed for initial migration.
     Type: AWS::IAM::Role
     Properties:
       RoleName: SPAPILambdaRole

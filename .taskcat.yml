@@ -24,5 +24,5 @@ tests:
       - us-east-2
     parameters:
       QSS3BucketName: $[taskcat_autobucket]
-    template: templates/SP_API_IAM_Role.template.yml
+    template: templates/SP_API_IAM_Role.template.yaml
 
